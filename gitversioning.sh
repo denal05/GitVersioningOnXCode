@@ -9,7 +9,7 @@
 version=$(git rev-parse --verify HEAD | cut -c 1-7)
 curdate=$(date +"%d.%m.%y")
 
-filesource="//\n//  GitVersion.h\n//\n//  Created by sig on $curdate.\n//\n\n#ifndef GitVersion_h\n#define GitVersion_h\n\n#define GIT_SHA_VERSION @\"$version\"\n\n#endif"
+filesource="//\n//  GitVersion.swift\n//\n//  Created by sig on $curdate.\n//\n\nlet GIT_SHA_VERSION = \"$version\"\n\n"
 
-echo -e "$filesource" > Sources/GitVersion.h
-touch Sources/GitVersion.h
+echo "$filesource" > Sources/GitVersion.swift
+touch Sources/GitVersion.swift
